@@ -1,9 +1,16 @@
+import React from 'react';
+//, {useState}
 import './App.css';
+
+import {Inserter} from './inserter';
+import {CalendarDay} from './calendarDay';
 
 function App() {
   return (
     <div id="swatches-root">
-      Goodbye, Pluto!
+      Calendar
+      <Inserter />
+      <CalendarDay />
     </div>
   );
 }
