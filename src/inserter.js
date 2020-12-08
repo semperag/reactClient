@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 export function Inserter(props) {
-    const [start, setStart] = useState(0);
-    const [end, setEnd] = useState(0);
+    const [start, setStart] = useState(1);
+    const [end, setEnd] = useState(1);
 
     return (
         <div id="inserter">

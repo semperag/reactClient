@@ -21,8 +21,10 @@ function App() {
       Calendar
       <Inserter add={addSlot}/>
       <div id="calendar-day">
+      <div id="today">Monday</div>
             
             <div id="calendar-times">
+              
                 <div id="left-cal">
                     <div className="time">1 AM</div>
                     <div className="time">2 AM</div>
@@ -49,7 +51,6 @@ function App() {
                     <div className="time">11 PM</div>
                 </div>
                 <div id="right-cal">
-                  <div id="today">Monday</div>
                     <div className="time-block"></div>
                     <div className="time-block"></div>
                     <div className="time-block"></div>

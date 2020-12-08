@@ -2,11 +2,10 @@ import React from 'react';
 
 export function TimeSlot(props) {
     const slot = props.slot;
-    const startTime = (25 - parseInt(slot.start)) * 30 - 30;
-    const endTime = (25 - parseInt(slot.end)) * 30 - 30;
+    const startTime = (25 - parseInt(slot.start)) * 30 ;
+    const endTime = (25 - parseInt(slot.end)) * 30 ;
     const heightNumber = startTime - endTime - 2;
 
-    console.log(props.start + '   -   ' + props.end);
     console.log(startTime + '   -   ' + endTime);
 
     return (

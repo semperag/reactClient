@@ -22,6 +22,7 @@
 
 #today {
     height: 30px;
+    margin-left: 50px;
 }
 
 .example {
@@ -30,7 +31,7 @@
 }
 
 #left-cal {
-    margin-top: 40px;
+    margin-top: 17px;
 }
 
 #right-cal {
