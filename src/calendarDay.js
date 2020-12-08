@@ -5,7 +5,7 @@ export function CalendarDay(props) {
 
     return (
         <div id="calendar-day">
-            <div id="today">Monday</div>
+            
             <div id="calendar-times">
                 <div id="left-cal">
                     <div className="time">1 AM</div>
@@ -33,6 +33,7 @@ export function CalendarDay(props) {
                     <div className="time">11 PM</div>
                 </div>
                 <div id="right-cal">
+                <div id="today">Monday</div>
                     <div className="time-block"></div>
                     <div className="time-block"></div>
                     <div className="time-block"></div>
