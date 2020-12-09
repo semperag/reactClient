@@ -8,13 +8,13 @@
 }
 
 .time {
-    height: 30px;
+    height: 50px;
     width: 50px;
 }
 
 .time-block {
-    height: 30px;
-    width: 300px;
+    height: 50px;
+    
     box-sizing: border-box;
     border: 1px solid #000;
     z-index: 0;
@@ -26,14 +26,18 @@
 }
 
 .example {
-    position: relative;
-    background-color: brown;
+    position: absolute;
+    left: 1px;
+    right: 10px;
+    background-color: rgb(186, 10, 209);
+    color: white;
 }
 
 #left-cal {
-    margin-top: 17px;
+    margin-top: 37px;
 }
 
 #right-cal {
     position: relative;
+    width: 90%;
 }
