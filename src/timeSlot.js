@@ -20,7 +20,7 @@ export function TimeSlot(props) {
             bottom: startTime.toString() + 'px',
             height: heightNumber + 'px'
         }}>
-            <span >{props.start} - {props.end}</span>
+            <span >{slot.name}</span>
         </div>
     );
 }

@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 export function Inserter(props) {
     const [start, setStart] = useState(1);
     const [end, setEnd] = useState(1);
+    const [name, setName] = useState('');
 
     return (
         <div id="inserter">
@@ -84,8 +85,16 @@ export function Inserter(props) {
                 </select>
             </div>
 
+            <input 
+                type="text"
+                id="name-input"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                placeholder="title"
+            />
+
             <div id="right">
-                <button onClick={() => props.add({start, end})}>Insert</button>
+                <button onClick={() => props.add({start, end, name})}>Insert</button>
             </div>
         </div>
     );
