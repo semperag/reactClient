@@ -92,8 +92,11 @@ export function Inserter(props) {
                 onChange={e => setName(e.target.value)}
                 placeholder="title"
             />
+            <span className="reset-input" onClick={() => 
+                setName('')}> &#x2716;
+            </span>
 
-            <div id="right">
+            <div id="insert">
                 <button onClick={() => props.add({start, end, name})}>Insert</button>
             </div>
         </div>

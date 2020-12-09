@@ -1,3 +1,7 @@
+#app-name {
+    font-size: 3em;
+}
+
 #swatches-root {
     margin: 10px;
 }
@@ -21,7 +25,8 @@
 }
 
 #today {
-    height: 30px;
+    font-size: 2em;
+    height: 50px;
     margin-left: 50px;
 }
 
@@ -40,4 +45,28 @@
 #right-cal {
     position: relative;
     width: 90%;
+}
+
+.reset-input {
+    color: rgb(151, 151, 151);
+}
+
+.reset-input {
+    color: rgb(151, 151, 151);
+}
+
+.reset-input:hover {
+    cursor: pointer;
+    color: rgb(85, 85, 85);
+}
+
+.delete-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    transform: scale(1.5);
 }

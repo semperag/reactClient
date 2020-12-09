@@ -11,6 +11,11 @@ function App() {
 
   console.log(timeSlots);
 
+  const removeSlot = name => {
+    setSlots(timeSlots => timeSlots.filter( slot => 
+      slot.name !== name));
+  }
+
   const addSlot = newSlot => {
     setSlots(timeSlots => [newSlot, ...timeSlots.filter(
     slot => slot.start !== newSlot.start)]);
@@ -18,7 +23,7 @@ function App() {
 
   return (
     <div id="swatches-root">
-      Calendar
+      <div id="app-name">Calendar</div>
       <Inserter add={addSlot}/>
       <div id="calendar-day">
       <div id="today">Monday</div>
@@ -77,7 +82,7 @@ function App() {
                     <div className="time-block"></div>
                     {timeSlots.map(slot => <TimeSlot
                     key={slot.start} slot=
-                    {slot}/>)}
+                    {slot} remove={removeSlot}/>)}
                 </div>
             </div>
         </div>

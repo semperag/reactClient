@@ -13,13 +13,13 @@ export function TimeSlot(props) {
     }
     startTime = startTime + 50;
 
-    console.log(startTime + '   -   ' + endTime);
-
     return (
         <div className="example" style={{
             bottom: startTime.toString() + 'px',
             height: heightNumber + 'px'
         }}>
+            <span className="delete-button" onClick={() => 
+                props.remove(slot.name)}>&#x2716;</span>
             <span >{slot.name}</span>
         </div>
     );
