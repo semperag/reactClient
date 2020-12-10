@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 export function Inserter(props) {
     const [start, setStart] = useState(1);
     const [end, setEnd] = useState(1);
-    const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
 
     return (
         <div id="inserter">
@@ -89,15 +89,15 @@ export function Inserter(props) {
                 type="text"
                 id="name-input"
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={e => setMessage(e.target.value)}
                 placeholder="title"
             />
             <span className="reset-input" onClick={() => 
-                setName('')}> &#x2716;
+                setMessage('')}> &#x2716;
             </span>
 
             <div id="insert">
-                <button onClick={() => props.add({start, end, name})}>Insert</button>
+                <button onClick={() => props.add({start, end, message})}>Insert</button>
             </div>
         </div>
     );

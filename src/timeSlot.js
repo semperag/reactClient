@@ -13,7 +13,7 @@ export function TimeSlot(props) {
     //const [year, setYear] = useState(memory.year);
     //const [month, setMonth] = useState(memory.month);
     //const [day, setDay] = useState(memory.day);
-    const [message, setMessage] = useState(slot.name);
+    const [message, setMessage] = useState(slot.message);
 
     const onEdit = () => {
         dispatch(enterEditMode(memory));
@@ -32,7 +32,7 @@ export function TimeSlot(props) {
 
     const onDelete = () => {
         dispatch(startDeletingMemory(memory));
-        props.remove(slot.name);
+        props.remove(message);
     }
 
     
@@ -53,10 +53,10 @@ export function TimeSlot(props) {
             height: heightNumber + 'px'
         }}>
             <span className="delete-button" onClick={() => 
-                props.remove(slot.name)}>&#x2716;</span>
+                props.remove(message)}>&#x2716;</span>
             <button onClick={onSave}>save</button>
             <button onClick={onCancel}>cancel</button>
-            <textarea value={slot.name} onChange={e =>
+            <textarea value={message} onChange={e =>
                     setMessage(e.target.value)}/>
         </div>
     } else {
@@ -67,7 +67,7 @@ export function TimeSlot(props) {
             }}>
                 <button onClick={onEdit}>edit</button>
                 <span className="delete-button" onClick={onDelete}>&#x2716;</span>
-                <span >{slot.name}</span>
+                <span >{message}</span>
             </div>
         );
     }

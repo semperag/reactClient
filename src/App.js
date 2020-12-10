@@ -20,7 +20,6 @@ function App() {
     dispatch(loadDay(month, day));
   }, [dispatch]);
 
-function addStuff() {
   const onAdd = () => {
     dispatch(startAddingMemory(year, month, day));
   }
@@ -29,7 +28,7 @@ function addStuff() {
     setSlots(timeSlots => [newSlot, ...timeSlots.filter(
     slot => slot.start !== newSlot.start)]);
   }
-}
+
 
   //return (
   //  <div className="memories-root">
@@ -52,7 +51,7 @@ function addStuff() {
   return (
     <div id="swatches-root">
       <div id="app-name">Calendar</div>
-      <Inserter add={addStuff}/>
+      <Inserter add={onAdd} add={addSlot}/>
       <div id="calendar-day">
       <div id="today">Monday</div>
             
