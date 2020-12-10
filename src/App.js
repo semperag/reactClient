@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {Memory} from './Memory';
+//import {Memory} from './Memory';
 import {useSelector, useDispatch} from 'react-redux';
 import {loadDay, startAddingMemory} from './actions';
 import {Inserter} from './inserter';
@@ -20,9 +20,23 @@ function App() {
     dispatch(loadDay(month, day));
   }, [dispatch]);
 
+function addStuff() {
   const onAdd = () => {
     dispatch(startAddingMemory(year, month, day));
   }
+
+  const addSlot = newSlot => {
+    setSlots(timeSlots => [newSlot, ...timeSlots.filter(
+    slot => slot.start !== newSlot.start)]);
+  }
+}
+
+  //return (
+  //  <div className="memories-root">
+  //    <button onClick={onAdd}>new memory</button>
+  //    {memories.map(memory => <Memory key={memory.id} memory={memory} />)}
+  //  </div>
+  //);
 
   //OLD CODE---------------------------
   const [timeSlots, setSlots] = useState([]);
@@ -34,15 +48,11 @@ function App() {
       slot.name !== name));
   }
 
-  const addSlot = newSlot => {
-    setSlots(timeSlots => [newSlot, ...timeSlots.filter(
-    slot => slot.start !== newSlot.start)]);
-  }
 
   return (
     <div id="swatches-root">
       <div id="app-name">Calendar</div>
-      <Inserter add={addSlot}/>
+      <Inserter add={addStuff}/>
       <div id="calendar-day">
       <div id="today">Monday</div>
             
@@ -99,8 +109,8 @@ function App() {
                     <div className="time-block"></div>
                     <div className="time-block"></div>
                     {timeSlots.map(slot => <TimeSlot
-                    key={slot.start} slot=
-                    {slot} remove={removeSlot}/>)}
+                    slot={slot} remove={removeSlot}/>)}
+                    {memories.map(slot => <TimeSlot key={slot.id} slot={slot} />)}
                 </div>
             </div>
         </div>
