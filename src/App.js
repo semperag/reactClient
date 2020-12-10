@@ -1,12 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-
+import {Memory} from './Memory';
+import {useSelector, useDispatch} from 'react-redux';
+import {loadDay, startAddingMemory} from './actions';
 import {Inserter} from './inserter';
-//import {CalendarDay} from './calendarDay';
 import {TimeSlot} from './timeSlot';
 
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
 
 function App() {
+
+  const memories = useSelector(state => state.memories);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadDay(month, day));
+  }, [dispatch]);
+
+  const onAdd = () => {
+    dispatch(startAddingMemory(year, month, day));
+  }
+
+  //OLD CODE---------------------------
   const [timeSlots, setSlots] = useState([]);
 
   console.log(timeSlots);
