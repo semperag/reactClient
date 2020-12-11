@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
-//import {Memory} from './Memory';
+import {Memory} from './Memory';
 import {useSelector, useDispatch} from 'react-redux';
 import {loadDay, startAddingMemory} from './actions';
-import {Inserter} from './inserter';
-import {TimeSlot} from './timeSlot';
 
 const date = new Date();
 const year = date.getFullYear();
