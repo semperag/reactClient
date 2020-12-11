@@ -2,16 +2,16 @@ import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {enterEditMode, leaveEditMode, startSavingMemory, startDeletingMemory} from './actions';
 
-const months = ["January", "February", "March", "April",
-"May", "June", "July", "August", "September", "October",
-"November", "December"];
+//const months = ["January", "February", "March", "April",
+//"May", "June", "July", "August", "September", "October",
+//"November", "December"];
 
 export function Memory(props) {
     const memory = props.memory;
     const dispatch = useDispatch();
-    const [year, setYear] = useState(memory.year);
-    const [month, setMonth] = useState(memory.month);
-    const [day, setDay] = useState(memory.day);
+    const [year] = useState(memory.year);
+    const [month] = useState(memory.month);
+    const [day] = useState(memory.day);
     const [message, setMessage] = useState(memory.message);
 
     const onEdit = () => {
@@ -23,17 +23,17 @@ export function Memory(props) {
     }
 
     const onSave = () => {
+        
         dispatch(startSavingMemory({
             id: memory.id,
             year,
             month,
             day,
             message,
+            start_time: memory.start_time,
+            end_time: memory.end_time
+            
         }));
-    }
-
-    const onDelete = () => {
-        dispatch(startDeletingMemory(memory));
     }
 
     if (memory.isEditing) {
