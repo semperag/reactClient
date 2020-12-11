@@ -55,73 +55,74 @@ return (
 
 
 
-  return (
-    <div id="swatches-root">
-      <div id="app-name">Calendar</div>
-      <Inserter add={onAdd} add={addSlot}/>
-      <div id="calendar-day">
-      <div id="today">Monday</div>
-            
-            <div id="calendar-times">
-              
-                <div id="left-cal">
-                    <div className="time">1 AM</div>
-                    <div className="time">2 AM</div>
-                    <div className="time">3 AM</div>
-                    <div className="time">4 AM</div>
-                    <div className="time">5 AM</div>
-                    <div className="time">6 AM</div>
-                    <div className="time">7 AM</div>
-                    <div className="time">8 AM</div>
-                    <div className="time">9 AM</div>
-                    <div className="time">10 AM</div>
-                    <div className="time">11 AM</div>
-                    <div className="time">12 PM</div>
-                    <div className="time">1 PM</div>
-                    <div className="time">2 PM</div>
-                    <div className="time">3 PM</div>
-                    <div className="time">4 PM</div>
-                    <div className="time">5 PM</div>
-                    <div className="time">6 PM</div>
-                    <div className="time">7 PM</div>
-                    <div className="time">8 PM</div>
-                    <div className="time">9 PM</div>
-                    <div className="time">10 PM</div>
-                    <div className="time">11 PM</div>
-                </div>
-                <div id="right-cal">
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    <div className="time-block"></div>
-                    {timeSlots.map(slot => <TimeSlot
-                    slot={slot} remove={removeSlot}/>)}
-                    {memories.map(slot => <TimeSlot key={slot.id} slot={slot} />)}
-                </div>
-            </div>
+      
+    <div id="calendar-times">
+        <div id="time-selector">
+            <select id="first-times"
+                value={start}
+                onChange={e => setStart(parseInt(e.target.value))}
+            >
+                <option value="1">12:00am</option>
+                <option value="2">1:00am</option>
+                <option value="3">2:00am</option>
+                <option value="4">3:00am</option>
+                <option value="5">4:00am</option>
+                <option value="6">5:00am</option>
+                <option value="7">6:00am</option>
+                <option value="8">7:00am</option>
+                <option value="9">8:00am</option>
+                <option value="10">9:00am</option>
+                <option value="11">10:00am</option>
+                <option value="12">11:00am</option>
+                <option value="13">12:00pm</option>
+                <option value="14">1:00pm</option>
+                <option value="15">2:00pm</option>
+                <option value="16">3:00pm</option>
+                <option value="17">4:00pm</option>
+                <option value="18">5:00pm</option>
+                <option value="19">6:00pm</option>
+                <option value="20">7:00pm</option>
+                <option value="21">8:00pm</option>
+                <option value="22">9:00pm</option>
+                <option value="23">10:00pm</option>
+                <option value="24">11:00pm</option>
+            </select>
+
+            <span> - </span>
+
+            <select id="second-times"
+                value={end}
+                onChange={e => setEnd(parseInt(e.target.value))}
+            >
+                <option value="2">1:00am</option>
+                <option value="3">2:00am</option>
+                <option value="4">3:00am</option>
+                <option value="5">4:00am</option>
+                <option value="6">5:00am</option>
+                <option value="7">6:00am</option>
+                <option value="8">7:00am</option>
+                <option value="9">8:00am</option>
+                <option value="10">9:00am</option>
+                <option value="11">10:00am</option>
+                <option value="12">11:00am</option>
+                <option value="13">12:00pm</option>
+                <option value="14">1:00pm</option>
+                <option value="15">2:00pm</option>
+                <option value="16">3:00pm</option>
+                <option value="17">4:00pm</option>
+                <option value="18">5:00pm</option>
+                <option value="19">6:00pm</option>
+                <option value="20">7:00pm</option>
+                <option value="21">8:00pm</option>
+                <option value="22">9:00pm</option>
+                <option value="23">10:00pm</option>
+                <option value="24">11:00pm</option>
+            </select>
+            <textarea value={message} onChange={e =>setMessage(e.target.value)}/>
+            <button id="insert" onClick={onAdd}>New Event</button>
         </div>
-    </div>
-  );
+        
+                
 }
 
 export default App;
