@@ -87,7 +87,7 @@ return (
               </select>
             </div>
 
-            <span> - </span>
+            <span id="select-between"> &ndash; </span>
 
             <div className="selector">
               <select id="second-times"
@@ -119,7 +119,7 @@ return (
                   <option value="24">11:00pm</option>
               </select>
             </div>
-            <textarea value={message} onChange={e =>setMessage(e.target.value)}/>
+            <textarea id="event" value={message} onChange={e =>setMessage(e.target.value)}/>
             <button id="insert" onClick={onAdd}>New Event</button>
         </div>
                   

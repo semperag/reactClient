@@ -105,15 +105,19 @@ select:hover {
   
   #time-selectors {
     flex-shrink: 0;
+    height: 500px;
     width: 270px;
     margin-top: 30px;
-    height: 125px;
     justify-content: center;
     padding-left: 40px;
   }
   
   #insert {
     margin-top: 30px;
+    margin-left: 80px;
+    width: 100px;
+    height: 65px;
+    border-radius: 15px;
     justify-content: center;
   }
   
@@ -148,30 +152,55 @@ select:hover {
 .selector {
     display: inline-block;
     border-radius: 15px;
-    width: 100px;
+    width: 110px;
+    color: brown;
 }
 
-.first-times {
+#first-times {
     width: 90px;
-    border:1px solid red;
-    -webkit-border-top-right-radius: 15px;
-    -webkit-border-bottom-right-radius: 15px;
-    -moz-border-radius-topright: 15px;
-    -moz-border-radius-bottomright: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding:2px;
+    border: 0 solid;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(10, 10, 173);
+    padding-left: 10px;
+}
+
+#second-times {
+    width: 90px;
+    border: 0 solid;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(10, 10, 173);
+    padding-left: 10px;
 }
 
 select {
-    height: 30px;
+    height: 45px;
     width: 90px;
     margin: 10px;
 }
 
 select:focus {
     min-width: 90px;
-    width: auto;
+}
+
+#select-between {
+    display: inline-block;
+    width: 30px;
+    height: 75px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#event {
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 230px;
 }
 
   #left-cal {
