@@ -134,7 +134,7 @@ select:hover {
     margin-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-  }
+}
   
   .example {
     position: absolute;
@@ -143,6 +143,10 @@ select:hover {
     color: white;
   }
   
+.selector {
+    border-radius: 5%;
+}
+
   #left-cal {
     text-align: right;
     padding-top: 118px;
