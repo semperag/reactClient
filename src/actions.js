@@ -56,7 +56,7 @@ function checkForErrors(response) {
     return response;
 }
 
-const host = 'https://today-api.handsdownbestproject.me:8442';
+const host = 'https://project2.handsdownbestproject.me:8442';
 
 export function loadDay(month, day) {
     return dispatch => {
