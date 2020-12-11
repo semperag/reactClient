@@ -75,3 +75,56 @@ select:hover {
   margin-top: -50px;
   animation: spin 1s infinite linear;
 }
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  #app-name {
+    font-size: 3em;
+    background: #513ea5;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+  }
+  
+  #calendar-times {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(198, 181, 245);
+    height: 1570px;
+  }
+  
+  #time-selector {
+    flex-shrink: 0;
+    width: 215px;
+    margin-top: 30px;
+    height: 125px;
+    justify-content: center;
+    padding-left: 40px;
+  }
+  
+  #insert {
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .time {
+    text-align: center;
+    height: 50px;
+  }
+  
+  .time-block {
+    height: 50px;
+    
+    box-sizing: border-box;
+    border: 1px solid #000;
+    z-index: 0;
+  }
+  
