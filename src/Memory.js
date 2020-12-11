@@ -70,3 +70,28 @@ export function Memory(props) {
         //<input type="text" value={day} onChange={e =>
         //setDay(parseInt(e.target.value))}/>
     } else {
+        console.log(memory.start_time + ' - ' + memory.end_time);
+        console.log(memory.start + ' - ' + memory.end);
+        return (
+            
+            <div className="example" style={{
+                bottom: memory.start_time + 'px',
+                height: memory.end_time + 'px',
+            }}>
+                <div className="memory" style={{
+                    boxShadow: '5px 10px 8px #888888'
+                }}>
+                    <div className="memory-left">
+                        <button onClick={onEdit}>edit</button>
+                    </div>
+                    <div className="memory-right">
+                        {memory.message}
+                    </div>
+                </div>
+            </div>
+        );
+
+        //<span className="year">{memory.year}</span>
+        //<span>{months[memory.month - 1]} {memory.day}</span>
+    }
+}
