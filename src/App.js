@@ -121,8 +121,65 @@ return (
             <textarea value={message} onChange={e =>setMessage(e.target.value)}/>
             <button id="insert" onClick={onAdd}>New Event</button>
         </div>
-        
-                
+                  
+        <div id="left-cal">
+            <div className="time">1 AM</div>
+            <div className="time">2 AM</div>
+            <div className="time">3 AM</div>
+            <div className="time">4 AM</div>
+            <div className="time">5 AM</div>
+            <div className="time">6 AM</div>
+            <div className="time">7 AM</div>
+            <div className="time">8 AM</div>
+            <div className="time">9 AM</div>
+            <div className="time">10 AM</div>
+            <div className="time">11 AM</div>
+            <div className="time">12 PM</div>
+            <div className="time">1 PM</div>
+            <div className="time">2 PM</div>
+            <div className="time">3 PM</div>
+            <div className="time">4 PM</div>
+            <div className="time">5 PM</div>
+            <div className="time">6 PM</div>
+            <div className="time">7 PM</div>
+            <div className="time">8 PM</div>
+            <div className="time">9 PM</div>
+            <div className="time">10 PM</div>
+            <div className="time">11 PM</div>
+        </div>
+        <div id="right-cal">
+          <div id="today">{weekday[date.getDay() - 1]}</div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            <div className="time-block"></div>
+            
+            {memories.map(memory => <Memory key={memory.id} memory={memory} />)}
+        </div>
+      </div>
+    </div>
+  </div>
+  );
 }
 
 export default App;
