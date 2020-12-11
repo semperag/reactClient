@@ -1,72 +1,77 @@
-#app-name {
-    font-size: 3em;
+.memories-root {
 }
 
-#swatches-root {
-    margin: 10px;
+.memory {
+  margin: 0px 10px 0 10px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 100%;
+  border-radius: 5px;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black;
 }
 
-#calendar-times {
-    display: flex;
-    flex-direction: row;
+.memory-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  background-color: #b5b4fa;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 2px solid #b596fa;
+  color: rgb(59, 59, 59);
+  flex: 0 0 9em;
 }
 
-.time {
-    height: 50px;
-    width: 50px;
+textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.time-block {
-    height: 50px;
-    
-    box-sizing: border-box;
-    border: 1px solid #000;
-    z-index: 0;
+button {
+  margin-top: 5px;
+  height: 30px;
 }
 
-#today {
-    font-size: 2em;
-    height: 50px;
-    margin-left: 50px;
+button:hover {
+  cursor: pointer;
 }
 
-.example {
-    position: absolute;
-    left: 1px;
-    right: 10px;
-    background-color: rgb(186, 10, 209);
-    color: white;
+select:hover {
+  background-color: rgb(246, 246, 246);
+  cursor: pointer;
 }
 
-#left-cal {
-    margin-top: 37px;
+.year {
+  font-size: 150%;
 }
 
-#right-cal {
-    position: relative;
-    width: 90%;
-}
-
-.reset-input {
-    color: rgb(151, 151, 151);
-}
-
-.reset-input {
-    color: rgb(151, 151, 151);
-}
-
-.reset-input:hover {
-    cursor: pointer;
-    color: rgb(85, 85, 85);
+.memory-right {
+  flex-grow: 1;
+  background-color: #c4d1f5;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: rgb(0, 0, 0);
 }
 
 .delete-button {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+  margin-top: 3em;
 }
 
-.delete-button:hover {
-    cursor: pointer;
-    transform: scale(1.5);
+.spinner {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border: 5px solid black;
+  border-top-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  animation: spin 1s infinite linear;
 }
