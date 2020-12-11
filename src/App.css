@@ -23,6 +23,8 @@
   border-right: 2px solid #b596fa;
   color: rgb(59, 59, 59);
   flex: 0 0 9em;
+  min-width: 60px;
+  flex-shrink: 1;
 }
 
 textarea {
@@ -101,9 +103,9 @@ select:hover {
     height: 1570px;
   }
   
-  #time-selector {
+  #time-selectors {
     flex-shrink: 0;
-    width: 215px;
+    width: 270px;
     margin-top: 30px;
     height: 125px;
     justify-content: center;
@@ -122,10 +124,10 @@ select:hover {
   
   .time-block {
     height: 50px;
-    
     box-sizing: border-box;
     border: 1px solid #000;
     z-index: 0;
+    width: 99.75%;
   }
   
 #today {
@@ -144,7 +146,32 @@ select:hover {
   }
   
 .selector {
-    border-radius: 5%;
+    display: inline-block;
+    border-radius: 15px;
+    width: 100px;
+}
+
+.first-times {
+    width: 90px;
+    border:1px solid red;
+    -webkit-border-top-right-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    -moz-border-radius-bottomright: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding:2px;
+}
+
+select {
+    height: 30px;
+    width: 90px;
+    margin: 10px;
+}
+
+select:focus {
+    min-width: 90px;
+    width: auto;
 }
 
   #left-cal {
