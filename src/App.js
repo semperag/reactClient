@@ -42,9 +42,9 @@ function App() {
 
   console.log(timeSlots);
 
-  const removeSlot = name => {
+  const removeSlot = message => {
     setSlots(timeSlots => timeSlots.filter( slot => 
-      slot.name !== name));
+      slot.message !== message));
   }
 
 

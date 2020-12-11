@@ -88,7 +88,7 @@ export function Inserter(props) {
             <input 
                 type="text"
                 id="name-input"
-                value={name}
+                value={message}
                 onChange={e => setMessage(e.target.value)}
                 placeholder="title"
             />
