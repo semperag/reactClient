@@ -72,8 +72,8 @@ export function loadDay(month, day) {
     };
 }
 
-export function startAddingMemory(year, month, day) {
-    const memory = {year, month, day, message: ''};
+export function startAddingMemory(year, month, day, start_time, end_time, message) {
+    const memory = {year, month, day, start_time, end_time, message};
     const options = {
         method: 'POST',
         headers: {
