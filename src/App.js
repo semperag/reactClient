@@ -56,7 +56,7 @@ return (
     <div id="calendar-times">
         <div id="time-selectors">
             <div className="selector">
-              <select id="first-times"
+              <select className="times"
                   value={start}
                   onChange={e => setStart(parseInt(e.target.value))}
               >
@@ -90,7 +90,7 @@ return (
             <span id="select-between"> &ndash; </span>
 
             <div className="selector">
-              <select id="second-times"
+              <select className="times"
                   value={end}
                   onChange={e => setEnd(parseInt(e.target.value))}
               >
@@ -119,7 +119,8 @@ return (
                   <option value="24">11:00pm</option>
               </select>
             </div>
-            <textarea id="event" value={message} onChange={e =>setMessage(e.target.value)}/>
+            <textarea id="event" value={message} placeholder="Event Title"
+            onChange={e =>setMessage(e.target.value)}/>
             <button id="insert" onClick={onAdd}>New Event</button>
         </div>
                   
