@@ -36,23 +36,23 @@ function App() {
   let heightNumber = startTime - endTime - 4;
   let looper = heightNumber;
 
+  while (looper > 46) {
+    startTime = startTime - 50;
+    looper = looper - 50;
+}
+startTime = startTime + 294;
 
-  //return (
-  //  <div className="memories-root">
-  //    <button onClick={onAdd}>new memory</button>
-  //    {memories.map(memory => <Memory key={memory.id} memory={memory} />)}
-  //  </div>
-  //);
+const onAdd = () => {
 
-  //OLD CODE---------------------------
-  const [timeSlots, setSlots] = useState([]);
 
-  console.log(timeSlots);
+dispatch(startAddingMemory(year, month, day, startTime, heightNumber, message));
+}
 
-  const removeSlot = message => {
-    setSlots(timeSlots => timeSlots.filter( slot => 
-      slot.message !== message));
-  }
+return (
+  <div className="memories-root">
+    <div id="app-name">Calendar</div>
+    <div id="calendar-day">
+
 
 
   return (
