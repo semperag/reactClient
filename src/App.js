@@ -18,11 +18,22 @@ weekday[4]="Friday";
 weekday[5]="Saturday";
 weekday[6]="Sunday";
 
+const months = [[], ["January", 31], ["February", 28], ["March", 31],
+["April", 30], ["May", 31], ["June", 30], ["July", 31], 
+["August", 31], ["September", 30], ["October", 31],
+["November", 30], ["December", 31]];
+
 function App() {
 
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(2);
   const [message, setMessage] = useState('');
+  const [year_date, setYear] = useState(year);
+  const [month_date, setMonth] = useState(month);
+  const [day_date, setDay] = useState(day);
+
+  console.log(months[12][0] + " = " + months[month_date][0]);
+  console.log(month);
 
   const memories = useSelector(state => state.memories);
   const dispatch = useDispatch();
@@ -44,13 +55,15 @@ startTime = startTime + 294;
 
 const onAdd = () => {
 
-
-dispatch(startAddingMemory(year, month, day, startTime, heightNumber, message));
+dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
 }
 
 return (
   <div className="memories-root">
-    <div id="app-name">Calendar</div>
+    <div id="app-name">
+      <span>Calendar</span> 
+    <span>------{months[month_date][0]} {day_date}, {year_date}</span>
+    </div>
     <div id="calendar-day">
       
     <div id="calendar-times">
@@ -150,7 +163,7 @@ return (
             <div className="time">11 PM</div>
         </div>
         <div id="right-cal">
-          <div id="today">{weekday[date.getDay() - 1]}</div>
+          <div id="today">{weekday[(day % 7)]}</div>
             <div className="time-block"></div>
             <div className="time-block"></div>
             <div className="time-block"></div>

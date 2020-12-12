@@ -43,8 +43,8 @@ export function Memory(props) {
     if (memory.isEditing) {
         return (
             <div className="example" style={{
-                bottom: (memory.start_time - (200 - memory.end_time)) + 'px',
-                height: 200 + 'px',
+                bottom: (memory.start_time - (196 - memory.end_time)) + 'px',
+                height: 196 + 'px',
                 zIndex: '1'
             }}>
                 <div className="memory" style={{
@@ -57,7 +57,7 @@ export function Memory(props) {
                         <button onClick={onDelete} className='delete-button'>delete</button>
                     </div>
                     <div className="memory-right">
-                        <textarea value={message} onChange={e =>
+                        <textarea value={message} placeholder="Event Title" onChange={e =>
                         setMessage(e.target.value)}/>
                     </div>
                 </div>
@@ -70,8 +70,6 @@ export function Memory(props) {
         //<input type="text" value={day} onChange={e =>
         //setDay(parseInt(e.target.value))}/>
     } else {
-        console.log(memory.start_time + ' - ' + memory.end_time);
-        console.log(memory.start + ' - ' + memory.end);
         return (
             
             <div className="example" style={{
