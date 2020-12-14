@@ -23,7 +23,7 @@ export function Memory(props) {
     }
 
     const onSave = () => {
-        
+        let save = true;
         dispatch(startSavingMemory({
             id: memory.id,
             year,
@@ -34,6 +34,12 @@ export function Memory(props) {
             end_time: memory.end_time
             
         }));
+
+        
+        //var myElements = document.querySelectorAll(".loader");
+       // myElements.style.display("inline-block");
+
+
     }
 
     const onDelete = () => {

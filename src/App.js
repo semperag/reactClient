@@ -54,15 +54,18 @@ function App() {
 startTime = startTime + 294;
 
 const onAdd = () => {
-
-dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
+  
+  dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
 }
+
 
 return (
   <div className="memories-root">
     <div id="app-name">
       <span>Calendar</span> 
-    <span>------{months[month_date][0]} {day_date}, {year_date}</span>
+      <span>------{months[month_date][0]} {day_date}, {year_date}</span>
+
+      <div class="loader"></div>
     </div>
     <div id="calendar-day">
       
