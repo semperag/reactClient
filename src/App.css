@@ -1,6 +1,3 @@
-.memories-root {
-}
-
 .memory {
   margin: 0px 10px 0 10px;
   display: flex;
@@ -79,68 +76,79 @@ select:hover {
 }
 
 @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
   
-  #app-name {
-    width: 100%;
-    font-size: 3em;
-    background: #513ea5;
-    padding-left: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: white;
-  }
-  
-  #calendar-times {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(198, 181, 245);
-    height: 1420px;
-  }
-  
-  #time-selectors {
-    flex-shrink: 0;
-    height: 500px;
-    width: 270px;
-    margin-top: 30px;
-    justify-content: center;
-    padding-left: 40px;
-  }
-  
-  #insert {
-    margin-top: 30px;
-    margin-left: 80px;
-    width: 100px;
-    height: 45px;
-    border-radius: 15px;
-    justify-content: center;
-    background-color: rgb(10, 10, 173);
-    border: 4px solid rgb(118, 119, 195);
-    color: white;
-  }
+#app-name {
+  width: 100%;
+  font-size: 3em;
+  background: #513ea5;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
 
-  #insert:hover {
-    background-color: rgb(7, 7, 110);
-  }
+#calendar-times {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(198, 181, 245);
+  height: 1420px;
+}
+
+#date {
+  top: 15px;
+  position: absolute;
+  display: inline-block;
+  left: 770px;
+  font-size: .8em;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
   
-  .time {
-    text-align: center;
-    height: 50px;
-  }
-  
-  .time-block {
-    height: 50px;
-    box-sizing: border-box;
-    border: 1px solid #000;
-    z-index: 0;
-    width: 99.75%;
-  }
+#time-selectors {
+  flex-shrink: 0;
+  height: 500px;
+  width: 270px;
+  margin-top: 30px;
+  justify-content: center;
+  padding-left: 40px;
+}
+
+#insert {
+  margin-top: 30px;
+  margin-left: 80px;
+  width: 100px;
+  height: 45px;
+  border-radius: 15px;
+  justify-content: center;
+  background-color: rgb(10, 10, 173);
+  border: 4px solid rgb(118, 119, 195);
+  color: white;
+}
+
+#insert:hover {
+  background-color: rgb(7, 7, 110);
+}
+
+.time {
+  text-align: center;
+  height: 50px;
+}
+
+.time-block {
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  z-index: 0;
+  width: 99.75%;
+}
   
 #today {
     font-size: 2.5em;
@@ -150,12 +158,12 @@ select:hover {
     padding-bottom: 5px;
 }
   
-  .example {
-    position: absolute;
-    left: 1px;
-    right: 10px;
-    color: white;
-  }
+.time-slot {
+  position: absolute;
+  left: 1px;
+  right: 10px;
+  color: white;
+}
   
 .selector {
     display: inline-block;
@@ -219,50 +227,50 @@ select:focus {
     border: 4px solid rgb(118, 119, 195);
 }
 
-  #left-cal {
-    text-align: right;
-    padding-top: 118px;
-    width: 60px;
-    background-color: #e9feff;
-    flex-shrink: 0;
-    opacity: 0.9;
-  }
+#left-cal {
+  text-align: right;
+  padding-top: 118px;
+  width: 60px;
+  background-color: #e9feff;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
   
-  #right-cal {
-    position: relative;
-    width: 90%;
-    background-color: #e9feff;
-    opacity: 0.9;
-  }
-  
-  .reset-input {
-    color: rgb(151, 151, 151);
-  }
-  
-  .reset-input {
-    color: rgb(151, 151, 151);
-  }
-  
-  .reset-input:hover {
-    cursor: pointer;
-    color: rgb(85, 85, 85);
-  }
-  
-  .delete-button:hover {
-    cursor: pointer;
-  }
+#right-cal {
+  position: relative;
+  width: 90%;
+  background-color: #e9feff;
+  opacity: 0.9;
+}
 
-  .loader {
-    margin-left: 100px;
-    display: none;
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #3498db;
-    width: 20px;
-    height: 20px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
-  }
+.reset-input {
+  color: rgb(151, 151, 151);
+}
+
+.reset-input {
+  color: rgb(151, 151, 151);
+}
+
+.reset-input:hover {
+  cursor: pointer;
+  color: rgb(85, 85, 85);
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.loader {
+  margin-left: 100px;
+  display: none;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
 
   /* Safari */
 @-webkit-keyframes spin {

@@ -29,12 +29,11 @@ function App() {
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(2);
   const [message, setMessage] = useState('');
-  const [year_date, setYear] = useState(year);
-  const [month_date, setMonth] = useState(month);
-  const [day_date, setDay] = useState(day);
+  const [year_date] = useState(year);
+  const [month_date] = useState(month);
+  const [day_date] = useState(day);
 
-  console.log(months[12][0] + " = " + months[month_date][0]);
-  console.log(month);
+  let today = months[month_date][0] + " " + day_date + ", " + year_date ;
 
   const memories = useSelector(state => state.memories);
   const dispatch = useDispatch();
@@ -51,154 +50,151 @@ function App() {
   while (looper > 46) {
     startTime = startTime - 50;
     looper = looper - 50;
-}
-startTime = startTime + 144;
+  }
+  startTime = startTime + 144;
 
-const onAdd = () => {
+  const onAdd = () => {
   
-  dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
-}
+    dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
+  }
 
+  return (
+    <div className="memories-root">
+      <div id="app-name">
+        <span>Calendar</span> 
+        <span id="date">{today}</span>
+        <div className="loader"></div>
+      </div>
+      <ProgressBar/>
+      <div id="calendar-day">
+      <div id="calendar-times">
+          <div id="time-selectors">
+              <div className="selector">
+                <select className="times"
+                    value={start}
+                    onChange={e => setStart(parseInt(e.target.value))}
+                >
+                    <option value="1">12:00am</option>
+                    <option value="2">1:00am</option>
+                    <option value="3">2:00am</option>
+                    <option value="4">3:00am</option>
+                    <option value="5">4:00am</option>
+                    <option value="6">5:00am</option>
+                    <option value="7">6:00am</option>
+                    <option value="8">7:00am</option>
+                    <option value="9">8:00am</option>
+                    <option value="10">9:00am</option>
+                    <option value="11">10:00am</option>
+                    <option value="12">11:00am</option>
+                    <option value="13">12:00pm</option>
+                    <option value="14">1:00pm</option>
+                    <option value="15">2:00pm</option>
+                    <option value="16">3:00pm</option>
+                    <option value="17">4:00pm</option>
+                    <option value="18">5:00pm</option>
+                    <option value="19">6:00pm</option>
+                    <option value="20">7:00pm</option>
+                    <option value="21">8:00pm</option>
+                    <option value="22">9:00pm</option>
+                    <option value="23">10:00pm</option>
+                    <option value="24">11:00pm</option>
+                </select>
+              </div>
 
-return (
-  <div className="memories-root">
-    <div id="app-name">
-      <span>Calendar</span> 
-      <span>------{months[month_date][0]} {day_date}, {year_date}</span>
+              <span id="select-between"> &ndash; </span>
 
-      <div className="loader"></div>
-    </div>
-    <ProgressBar/>
-    <div id="calendar-day">
-    <ProgressBar/>
-    <div id="calendar-times">
-        <div id="time-selectors">
-            <div className="selector">
-              <select className="times"
-                  value={start}
-                  onChange={e => setStart(parseInt(e.target.value))}
-              >
-                  <option value="1">12:00am</option>
-                  <option value="2">1:00am</option>
-                  <option value="3">2:00am</option>
-                  <option value="4">3:00am</option>
-                  <option value="5">4:00am</option>
-                  <option value="6">5:00am</option>
-                  <option value="7">6:00am</option>
-                  <option value="8">7:00am</option>
-                  <option value="9">8:00am</option>
-                  <option value="10">9:00am</option>
-                  <option value="11">10:00am</option>
-                  <option value="12">11:00am</option>
-                  <option value="13">12:00pm</option>
-                  <option value="14">1:00pm</option>
-                  <option value="15">2:00pm</option>
-                  <option value="16">3:00pm</option>
-                  <option value="17">4:00pm</option>
-                  <option value="18">5:00pm</option>
-                  <option value="19">6:00pm</option>
-                  <option value="20">7:00pm</option>
-                  <option value="21">8:00pm</option>
-                  <option value="22">9:00pm</option>
-                  <option value="23">10:00pm</option>
-                  <option value="24">11:00pm</option>
-              </select>
-            </div>
-
-            <span id="select-between"> &ndash; </span>
-
-            <div className="selector">
-              <select className="times"
-                  value={end}
-                  onChange={e => setEnd(parseInt(e.target.value))}
-              >
-                  <option value="2">1:00am</option>
-                  <option value="3">2:00am</option>
-                  <option value="4">3:00am</option>
-                  <option value="5">4:00am</option>
-                  <option value="6">5:00am</option>
-                  <option value="7">6:00am</option>
-                  <option value="8">7:00am</option>
-                  <option value="9">8:00am</option>
-                  <option value="10">9:00am</option>
-                  <option value="11">10:00am</option>
-                  <option value="12">11:00am</option>
-                  <option value="13">12:00pm</option>
-                  <option value="14">1:00pm</option>
-                  <option value="15">2:00pm</option>
-                  <option value="16">3:00pm</option>
-                  <option value="17">4:00pm</option>
-                  <option value="18">5:00pm</option>
-                  <option value="19">6:00pm</option>
-                  <option value="20">7:00pm</option>
-                  <option value="21">8:00pm</option>
-                  <option value="22">9:00pm</option>
-                  <option value="23">10:00pm</option>
-                  <option value="24">11:00pm</option>
-              </select>
-            </div>
-            <textarea id="event" value={message} placeholder="Event Title"
-            onChange={e =>setMessage(e.target.value)}/>
-            <button id="insert" onClick={onAdd}>New Event</button>
-        </div>
-                  
-        <div id="left-cal">
-            <div className="time">1 AM</div>
-            <div className="time">2 AM</div>
-            <div className="time">3 AM</div>
-            <div className="time">4 AM</div>
-            <div className="time">5 AM</div>
-            <div className="time">6 AM</div>
-            <div className="time">7 AM</div>
-            <div className="time">8 AM</div>
-            <div className="time">9 AM</div>
-            <div className="time">10 AM</div>
-            <div className="time">11 AM</div>
-            <div className="time">12 PM</div>
-            <div className="time">1 PM</div>
-            <div className="time">2 PM</div>
-            <div className="time">3 PM</div>
-            <div className="time">4 PM</div>
-            <div className="time">5 PM</div>
-            <div className="time">6 PM</div>
-            <div className="time">7 PM</div>
-            <div className="time">8 PM</div>
-            <div className="time">9 PM</div>
-            <div className="time">10 PM</div>
-            <div className="time">11 PM</div>
-        </div>
-        <div id="right-cal">
-          <div id="today">{weekday[(day % 7)]}</div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            <div className="time-block"></div>
-            
-            {memories.map(memory => <Memory key={memory.id} memory={memory} />)}
+              <div className="selector">
+                <select className="times"
+                    value={end}
+                    onChange={e => setEnd(parseInt(e.target.value))}
+                >
+                    <option value="2">1:00am</option>
+                    <option value="3">2:00am</option>
+                    <option value="4">3:00am</option>
+                    <option value="5">4:00am</option>
+                    <option value="6">5:00am</option>
+                    <option value="7">6:00am</option>
+                    <option value="8">7:00am</option>
+                    <option value="9">8:00am</option>
+                    <option value="10">9:00am</option>
+                    <option value="11">10:00am</option>
+                    <option value="12">11:00am</option>
+                    <option value="13">12:00pm</option>
+                    <option value="14">1:00pm</option>
+                    <option value="15">2:00pm</option>
+                    <option value="16">3:00pm</option>
+                    <option value="17">4:00pm</option>
+                    <option value="18">5:00pm</option>
+                    <option value="19">6:00pm</option>
+                    <option value="20">7:00pm</option>
+                    <option value="21">8:00pm</option>
+                    <option value="22">9:00pm</option>
+                    <option value="23">10:00pm</option>
+                    <option value="24">11:00pm</option>
+                </select>
+              </div>
+              <textarea id="event" value={message} placeholder="Event Title"
+              onChange={e =>setMessage(e.target.value)}/>
+              <button id="insert" onClick={onAdd}>New Event</button>
+          </div>
+                    
+          <div id="left-cal">
+              <div className="time">1 AM</div>
+              <div className="time">2 AM</div>
+              <div className="time">3 AM</div>
+              <div className="time">4 AM</div>
+              <div className="time">5 AM</div>
+              <div className="time">6 AM</div>
+              <div className="time">7 AM</div>
+              <div className="time">8 AM</div>
+              <div className="time">9 AM</div>
+              <div className="time">10 AM</div>
+              <div className="time">11 AM</div>
+              <div className="time">12 PM</div>
+              <div className="time">1 PM</div>
+              <div className="time">2 PM</div>
+              <div className="time">3 PM</div>
+              <div className="time">4 PM</div>
+              <div className="time">5 PM</div>
+              <div className="time">6 PM</div>
+              <div className="time">7 PM</div>
+              <div className="time">8 PM</div>
+              <div className="time">9 PM</div>
+              <div className="time">10 PM</div>
+              <div className="time">11 PM</div>
+          </div>
+          <div id="right-cal">
+            <div id="today">{weekday[(day % 7)]}</div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              <div className="time-block"></div>
+              
+              {memories.map(memory => <Memory key={memory.id} memory={memory} />)}
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 }
 

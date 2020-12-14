@@ -2,10 +2,6 @@ import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {enterEditMode, leaveEditMode, startSavingMemory, startDeletingMemory} from './actions';
 
-//const months = ["January", "February", "March", "April",
-//"May", "June", "July", "August", "September", "October",
-//"November", "December"];
-
 export function Memory(props) {
     const memory = props.memory;
     const dispatch = useDispatch();
@@ -34,12 +30,6 @@ export function Memory(props) {
             end_time: memory.end_time
             
         }));
-
-        
-        //var myElements = document.querySelectorAll(".loader");
-       // myElements.style.display("inline-block");
-
-
     }
 
     const onDelete = () => {
@@ -48,7 +38,7 @@ export function Memory(props) {
 
     if (memory.isEditing) {
         return (
-            <div className="example" style={{
+            <div className="time-slot" style={{
                 bottom: (memory.start_time - (196 - memory.end_time)) + 'px',
                 height: 196 + 'px',
                 zIndex: '1'
@@ -69,16 +59,10 @@ export function Memory(props) {
                 </div>
             </div>
         );
-        //<input type="text" value={year} onChange={e =>
-        //setYear(parseInt(e.target.value))}/>
-        //<input type="text" value={month} onChange={e =>
-        //setMonth(parseInt(e.target.value))}/>
-        //<input type="text" value={day} onChange={e =>
-        //setDay(parseInt(e.target.value))}/>
     } else {
         return (
             
-            <div className="example" style={{
+            <div className="time-slot" style={{
                 bottom: memory.start_time + 'px',
                 height: memory.end_time + 'px',
             }}>
@@ -94,8 +78,5 @@ export function Memory(props) {
                 </div>
             </div>
         );
-
-        //<span className="year">{memory.year}</span>
-        //<span>{months[memory.month - 1]} {memory.day}</span>
     }
 }
