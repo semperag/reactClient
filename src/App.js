@@ -31,7 +31,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [year_date] = useState(year);
   const [month_date] = useState(month);
-  const [day_date] = useState(day);
+  const [day_date, setDay] = useState(day);
 
   let today = months[month_date][0] + " " + day_date + ", " + year_date ;
 
@@ -58,12 +58,24 @@ function App() {
     dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
   }
 
+  const nextDay = () => {
+    setDay(day_date + 1);
+  }
+
+  const prevDay = () => {
+    setDay(day_date - 1);
+  }
+
   return (
     <div className="memories-root">
       <div id="app-name">
         <span id="calendar">Calendar</span> 
-        <span id="date">{today}</span>
         <div className="loader"></div>
+      </div>
+      <div id="date">
+        <button onClick={prevDay}>&lt;</button>
+        <span>{today}</span>
+        <button onClick={nextDay}>&gt;</button>
       </div>
       <ProgressBar/>
       <div id="calendar-day">
@@ -164,7 +176,7 @@ function App() {
               <div className="time">11 PM</div>
           </div>
           <div id="right-cal">
-            <div id="today">{weekday[(day % 7)]}</div>
+            <div id="today">{weekday[(day_date % 7)]}</div>
               <div className="time-block"></div>
               <div className="time-block"></div>
               <div className="time-block"></div>
