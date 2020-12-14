@@ -52,7 +52,7 @@ function App() {
     startTime = startTime - 50;
     looper = looper - 50;
 }
-startTime = startTime + 294;
+startTime = startTime + 144;
 
 const onAdd = () => {
   
@@ -66,11 +66,11 @@ return (
       <span>Calendar</span> 
       <span>------{months[month_date][0]} {day_date}, {year_date}</span>
 
-      <div class="loader"></div>
+      <div className="loader"></div>
     </div>
     <ProgressBar/>
     <div id="calendar-day">
-      
+    <ProgressBar/>
     <div id="calendar-times">
         <div id="time-selectors">
             <div className="selector">

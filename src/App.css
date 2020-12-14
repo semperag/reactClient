@@ -101,7 +101,7 @@ select:hover {
     display: flex;
     flex-direction: row;
     background-color: rgb(198, 181, 245);
-    height: 1570px;
+    height: 1420px;
   }
   
   #time-selectors {
