@@ -3,6 +3,7 @@ import './App.css';
 import {Memory} from './Memory';
 import {useSelector, useDispatch} from 'react-redux';
 import {loadDay, startAddingMemory} from './actions';
+import {ProgressBar} from 'react-fetch-progressbar';
 
 const date = new Date();
 const year = date.getFullYear();
@@ -67,6 +68,7 @@ return (
 
       <div class="loader"></div>
     </div>
+    <ProgressBar/>
     <div id="calendar-day">
       
     <div id="calendar-times">

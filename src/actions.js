@@ -1,3 +1,8 @@
+import {progressBarFetch, setOriginalFetch} from 'react-fetch-progressbar';
+setOriginalFetch(window.fetch);
+window.fetch = progressBarFetch;
+
+
 export const Action = Object.freeze({
     LoadMemories: 'LoadMemories',
     FinishAddingMemory: 'FinishAddingMemory',
