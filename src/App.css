@@ -88,7 +88,6 @@ select:hover {
   width: 100%;
   font-size: 3em;
   background: #513ea5;
-  padding-left: 40px;
   padding-top: 5px;
   padding-bottom: 5px;
   color: white;
@@ -99,6 +98,10 @@ select:hover {
   flex-direction: row;
   background-color: rgb(198, 181, 245);
   height: 1420px;
+}
+
+#calendar {
+  padding-left: 40px;
 }
 
 #date {

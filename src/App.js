@@ -61,7 +61,7 @@ function App() {
   return (
     <div className="memories-root">
       <div id="app-name">
-        <span>Calendar</span> 
+        <span id="calendar">Calendar</span> 
         <span id="date">{today}</span>
         <div className="loader"></div>
       </div>
