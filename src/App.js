@@ -121,9 +121,9 @@ function App() {
         <div className="loader"></div>
       </div>
       <div id="date">
-        <button onClick={prevDay}>&lt;</button>
-        <span>{today}</span>
-        <button onClick={nextDay}>&gt;</button>
+        <button className="date-button" onClick={prevDay}>&lt;</button>
+        <button className="date-button" onClick={nextDay}>&gt;</button>
+        <span id="today-date">{today}</span>
       </div>
       <ProgressBar/>
       <div id="calendar-day">

@@ -122,6 +122,27 @@ select:hover {
   color: white;
   font-size: 2em;
 }
+
+#today-date {
+  padding-left: 10px;
+}
+
+.date-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: #513ea5;
+  border: none;
+  color: white;
+}
+.date-button:hover {
+  background: #6a54cc;
+}
+
+.date-button:active {
+  background: #8c75f5;
+}
   
 #time-selectors {
   flex-shrink: 0;
@@ -145,7 +166,11 @@ select:hover {
 }
 
 #insert:hover {
-  background-color: rgb(7, 7, 110);
+  background-color: rgb(18, 18, 131);
+}
+
+#insert:active {
+background-color: rgb(3, 3, 88);
 }
 
 .time {
@@ -162,11 +187,11 @@ select:hover {
 }
   
 #today {
-    font-size: 2.5em;
-    height: 70px;
-    margin-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  font-size: 2.5em;
+  height: 70px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
   
 .time-slot {
@@ -177,26 +202,30 @@ select:hover {
 }
   
 .selector {
-    display: inline-block;
-    border-radius: 15px;
-    width: 110px;
-    color: brown;
+  display: inline-block;
+  border-radius: 15px;
+  width: 110px;
+  color: brown;
 }
 
 .times {
-    width: 90px;
-    border: 0 solid;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    color: white;
-    background-color: rgb(10, 10, 173);
-    border: 4px solid rgb(118, 119, 195);
-    padding-left: 6px;
+  width: 90px;
+  border: 0 solid;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(10, 10, 173);
+  border: 4px solid rgb(118, 119, 195);
+  padding-left: 6px;
 }
 
 .times:hover {
-    background-color: rgb(7, 7, 110);
+    background-color: rgb(18, 18, 131);
+}
+
+.times:active {
+  background-color: rgb(3, 3, 88);
 }
 
 #second-times {
