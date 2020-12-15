@@ -55,13 +55,13 @@ export function Memory(props) {
                 }}>
                     <div className="memory-left">
                     
-                        <button onClick={onSave}>save</button>
-                        <button onClick={onCancel}>cancel</button>
-                        <button onClick={onDelete} className='delete-button'>delete</button>
+                        <button id="save" onClick={onSave}>save</button>
+                        <button id="cancel" onClick={onCancel}>cancel</button>
+                        <button id="delete" onClick={onDelete} className='delete-button'>delete</button>
                     </div>
                     <div className="memory-right">
-                        <textarea value={message} placeholder="Event Title" onChange={e =>
-                        setMessage(e.target.value)}/>
+                        <textarea id="event-text" value={message} placeholder="Event Title" 
+                        onChange={e => setMessage(e.target.value)}/>
                     </div>
                 </div>
             </div>

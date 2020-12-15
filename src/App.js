@@ -122,6 +122,7 @@ function App() {
       </div>
       <div id="date">
         <button className="date-button" onClick={prevDay}>&lt;</button>
+        <span> </span>
         <button className="date-button" onClick={nextDay}>&gt;</button>
         <span id="today-date">{today}</span>
       </div>
