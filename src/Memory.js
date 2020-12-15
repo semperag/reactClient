@@ -19,7 +19,6 @@ export function Memory(props) {
     }
 
     const onSave = () => {
-        let save = true;
         dispatch(startSavingMemory({
             id: memory.id,
             year,
@@ -34,6 +33,14 @@ export function Memory(props) {
 
     const onDelete = () => {
         dispatch(startDeletingMemory(memory));
+    }
+
+    let edit_font_size = 1;
+    let edit_border_size = 3;
+
+    if (memory.end_time > 50) {
+        edit_font_size = 1.5;
+        edit_border_size = 7;
     }
 
     if (memory.isEditing) {
@@ -70,7 +77,11 @@ export function Memory(props) {
                     boxShadow: '5px 10px 8px #888888'
                 }}>
                     <div className="memory-left">
-                        <button onClick={onEdit}>edit</button>
+                        <button id="edit" style={{
+                            fontSize: edit_font_size + 'em',
+                            border: edit_border_size + 'px solid rgb(118, 119, 195)',
+                        }}
+                        onClick={onEdit}>edit</button>
                     </div>
                     <div className="memory-right">
                         {memory.message}
