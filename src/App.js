@@ -29,9 +29,10 @@ function App() {
   const [start, setStart] = useState(1);
   const [end, setEnd] = useState(2);
   const [message, setMessage] = useState('');
-  const [year_date] = useState(year);
-  const [month_date] = useState(month);
+  const [year_date, setYear] = useState(year);
+  const [month_date, setMonth] = useState(month);
   const [day_date, setDay] = useState(day);
+  const [day_number, setDayNumber] = useState(day);
 
   let today = months[month_date][0] + " " + day_date + ", " + year_date ;
 
@@ -54,16 +55,63 @@ function App() {
   startTime = startTime + 144;
 
   const onAdd = () => {
-  
     dispatch(startAddingMemory(year_date, month_date, day_date, startTime, heightNumber, message));
   }
 
   const nextDay = () => {
-    setDay(day_date + 1);
+    let loading_day = day_date;
+    let loading_month = month_date;
+
+    if (day_date === months[month_date][1]) {
+      setDay(1);
+      loading_day = 1;
+      if (month_date === 12) {
+        setMonth(1);
+        setYear(year_date + 1)
+        loading_month = 1;
+      } else {
+        setMonth(month_date + 1);
+        loading_month = loading_month + 1;
+      }
+    } else {
+      setDay(day_date + 1);
+      loading_day = loading_day + 1;
+    }
+
+    setDayNumber(day_number + 1);
+
+    dispatch(loadDay(loading_month, loading_day));
   }
 
   const prevDay = () => {
-    setDay(day_date - 1);
+    let loading_day = day_date;
+    let loading_month = month_date;
+
+    if (day_date === 1) {
+      if (month_date === 1) {
+        setMonth(12);
+        setDay(months[12][1]);
+        setYear(year_date - 1);
+        loading_day = months[12][1];
+        loading_month = 12;
+      } else {
+        setMonth(month_date - 1);
+        setDay(months[month_date - 1][1]);
+        loading_day = months[month_date - 1][1];
+        loading_month = loading_month - 1;
+      }
+    } else {
+      setDay(day_date - 1);
+      loading_day = loading_day - 1;
+    }
+
+    if (day_number === 0) {
+      setDayNumber(6);
+    } else {
+      setDayNumber(day_number - 1);
+    }
+
+    dispatch(loadDay(loading_month, loading_day));
   }
 
   return (
@@ -176,7 +224,7 @@ function App() {
               <div className="time">11 PM</div>
           </div>
           <div id="right-cal">
-            <div id="today">{weekday[(day_date % 7)]}</div>
+            <div id="today">{weekday[(day_number % 7)]}</div>
               <div className="time-block"></div>
               <div className="time-block"></div>
               <div className="time-block"></div>
